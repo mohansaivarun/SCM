@@ -1,0 +1,15 @@
+from django.db import models
+class user(models.Model):
+    usrID=models.IntegerField(primary_key=True)
+    usrName=models.CharField(max_length=50)
+    usrEmailID=models.EmailField(max_length=50)
+    usrDescription=models.CharField(max_length=100)
+    usrCreationDate=models.DateTimeField()
+    usrStatus=models.IntegerField()
+    usrType=models.CharField(max_length=10)
+    usrPlan=models.CharField(max_length=10)
+    password=models.CharField(max_length=25)
+    GoogleID=models.CharField(max_length=25)
+    LinkedIN=models.CharField(max_length=25)
+    usrPhone=models.IntegerField()
+    usrOrgName=models.CharField(max_length=50)
