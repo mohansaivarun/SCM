@@ -129,5 +129,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'k.m.s.varun@gmail.com'
-EMAIL_HOST_PASSWORD ='varun@-97b81a0571'
+EMAIL_HOST_PASSWORD ='*******************'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
