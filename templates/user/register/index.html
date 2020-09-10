@@ -10,67 +10,42 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>User Registration</title>
 
     <!-- Icons font CSS-->
     {% load static %}
-    <link href="{% static 'user/register/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'user/register/vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
     <link href="{% static 'user/register/vendor/font-awesome-4.7/css/font-awesome.min.css'%}" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="{% static 'user/register/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
-    <link href="{% static 'user/register/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'user/register/vendor/select2/select2.min.css'%}" rel="stylesheet" media="all">
+    <link href="{% static 'user/register/vendor/datepicker/daterangepicker.css'%}" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="{% static 'user/register/css/main.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'user/register/css/main.css'%}" rel="stylesheet" media="all">
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="page-wrapper p-t-50 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
                     <form method="POST">
+                        {% csrf_token %}
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">first name</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <label class="label">First Name</label>
+                                    <input class="input--style-4" type="text" name="fname">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Birthday</label>
-                                    <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
-                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
+                                    <label class="label">Last Name</label>
+                                    <input class="input--style-4" type="text" name="lname">
                                 </div>
                             </div>
                         </div>
@@ -88,20 +63,44 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input-group">
-                            <label class="label">Subject</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>Subject 1</option>
-                                    <option>Subject 2</option>
-                                    <option>Subject 3</option>
-                                </select>
-                                <div class="select-dropdown"></div>
+                        <div class="row row-space">
+                            <div class="input-group">
+                                <label class="label">Gender</label>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-100">Male
+                                            <input type="radio" checked="checked" name="gender" value="M">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    <label class="radio-container m-r-100">Female
+                                            <input type="radio" name="gender" value="F">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    <label class="radio-container">Transgender
+                                            <input type="radio" name="gender" value="T">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-t-15">
+                        <div>
+                            <div>
+                                <div class="input-group">
+                                    <label class="label">Enter Nearest City</label>
+                                    <input class="input--style-4" type="text" name="city">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                        <div class="flex-col-c">
+                            <span class="txt1">
+                                Already had an Account?
+                            </span>
+
+                            <a href="/user/login/" class="txt3">
+                                Login Now
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -110,14 +109,14 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="{% static 'user/register/vendor/jquery/jquery.min.js'%}"></script>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="{% static 'user/register/vendor/select2/select2.min.js'%}"></script>
+    <script src="{% static 'user/register/vendor/datepicker/moment.min.js'%}"></script>
+    <script src="{% static 'user/register/vendor/datepicker/daterangepicker.js'%}"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="{% static 'user/register/js/global.js'%}"></script>
 
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->

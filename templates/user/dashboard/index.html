@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="{% static 'user/dashboard/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="{% static 'user/dashboard/vendor/font-awesome/css/font-awesome.min.css' %}">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="{% static 'user/dashboard/css/fontastic.css' %}">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="{% static 'user/dashboard/css/grasp_mobile_progress_circle-1.0.0.min.css' %}">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="{% static 'user/dashboard/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css' %}">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'user/dashboard/css/style.default.css' %}" id="theme-stylesheet">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'user/dashboard/img/favicon.ico' %}">
+</head>
+
+<body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+        <div class="side-navbar-wrapper">
+            <!-- Sidebar Header    -->
+            <div class="sidenav-header-logo">
+                <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a>
+                </div>
+            </div>
+            <div class="sidenav-header d-flex align-items-center justify-content-center">
+                <!-- User Info-->
+                <div class="sidenav-header-inner text-center"><img src="{% static 'user/dashboard/img/avatar-8.jpg' %}" alt="person" class=" rounded-circle">
+                    <h2 class="h5">{{name}}</h2><span>{{desc}}</span>
+                </div>
+                <!-- Small Brand information, appears on minimized sidebar-->
+            </div>
+            <!-- Sidebar Navigation Menus-->
+            <div class="main-menu">
+                <h5 class="sidenav-heading">Main</h5>
+                <ul id="side-main-menu" class="side-menu list-unstyled">
+                    <li>
+                        <a href="/templates/user/dashboard/index.html"> <i class="icon-home"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="user/me"> <i class="icon-user"></i>My Profile</a>
+                    </li>
+                    <li>
+                        <a href="/frms"> <i class="icon-form"></i>Forms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page">
+        <!-- navbar-->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <a href="user/dashboard/index.html" class="navbar-brand">
+                            <div class="brand-text d-none d-md-inline-block"><strong class="text-primary">{{name}}'s Dashboard</strong></div>
+                        </a>
+                        <!-- Log out-->
+                        <!--li class="nav-item">
+                            <a href="/" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a>
+                        </li-->
+                        <!-- profile photo-->
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                            <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i><img src="{% static 'user/dashboard/img/avatar-8.jpg'%}" alt="person" class="img-fluid rounded-circle"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="{% static 'user/dashboard/img/avatar-1.jpg'%}" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="{% static 'user/dashboard/img/avatar-2.jpg' %}" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                            <div class="msg-profile"> <img src="{% static 'user/dashboard/img/avatar-3.jpg' %}" alt="..." class="img-fluid rounded-circle"></div>
+                                            <div class="msg-body">
+                                                <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/" class="nav-link logout">
+                                            <div class="msg-body">
+                                                <h3 class="h5">Logout</h3>
+                                                <i class="fa fa-sign-out"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- JavaScript files-->
+        <script src="{% static 'user/dashboard/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'user/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'user/dashboard/js/grasp_mobile_progress_circle-1.0.0.min.js' %}"></script>
+        <script src="{% static 'user/dashboard/vendor/jquery.cookie/jquery.cookie.js' %}">
+        </script>
+        <script src="{% static 'user/dashboard/vendor/chart.js/Chart.min.js' %}"></script>
+        <script src="{% static 'user/dashboard/vendor/jquery-validation/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'user/dashboard/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+        <script src="{% static 'user/dashboard/js/charts-home.js' %}"></script>
+        <!-- Main File-->
+        <script src="{% static 'user/dashboard/js/front.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Successful</title>
+
+    <!-- Icons font CSS-->
+    {% load static %}
+    <!-- Main CSS-->
+    <link href="{% static 'user/set_password_done/css/main.css'%}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper p-t-50 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Your SCM Account has been Encrypted with Your Password</h2>
+                    <h5>*Your Password for the SCM Account has been Set Successfully</h5><br></br>
+                    <h5>Please Login to use your Account...:)</h5><br></br>
+                    <br></br>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JS-->
+    <script src="{% static 'user/set_password_done/js/global.js'%}"></script>
+
+</body>
+
+</html>

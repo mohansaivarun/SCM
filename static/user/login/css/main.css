@@ -30,6 +30,7 @@ body,
 html {
     height: 100%;
     color: #000;
+    background-color: #000;
     font-family: Ubuntu-Regular, sans-serif;
 }
 
@@ -54,7 +55,7 @@ a:focus {
 
 a:hover {
     text-decoration: none;
-    color: #1b3815;
+    color: #2f00ff;
 }
 
 
@@ -167,24 +168,23 @@ iframe {
 
 .txt1 {
     font-family: Ubuntu-Regular;
-    font-size: 15px;
+    font-size: 13px;
     color: #000;
     line-height: 1.4;
 }
 
 .txt2 {
     font-family: Ubuntu-Regular;
-    font-size: 15px;
-    color: rgb(0, 0, 0);
+    font-size: 13px;
+    color: rgb(255, 0, 0);
     line-height: 1.4;
 }
 
 .txt3 {
     font-family: Ubuntu-Bold;
     font-size: 15px;
-    color: rgb(255, 0, 149);
+    color: rgb(6, 160, 1);
     line-height: 1.4;
-    text-transform: uppercase;
 }
 
 
@@ -210,7 +210,7 @@ iframe {
     align-items: center;
     padding: 30px;
     position: relative;
-    background-color: #fff;
+    background-color: #d3d3d3;
 }
 
 .wrap-login100 {
@@ -258,7 +258,7 @@ iframe {
 
 .wrap-input100 {
     width: 100%;
-    background-color: #fff;
+    background-color: #ff0;
     border-radius: 27px;
     position: relative;
     z-index: 1;
@@ -267,7 +267,7 @@ iframe {
 .input100 {
     font-family: Ubuntu-Bold;
     font-size: 15px;
-    color: #1b3815;
+    color: #000;
     line-height: 1.2;
     position: relative;
     display: block;
@@ -313,7 +313,8 @@ iframe {
 [ Button ]*/
 
 .container-login100-form-btn {
-    width: 80%;
+    width: 50%;
+    margin: 0 auto;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -334,13 +335,12 @@ iframe {
     padding: 0 20px;
     width: 100%;
     height: 50px;
-    background-color: rgb(25, 0, 255);
+    background-color: rgb(0, 109, 252);
     border-radius: 25px;
     font-family: Ubuntu-Bold;
     font-size: 15px;
     color: #fff;
     line-height: 1.2;
-    text-transform: uppercase;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -348,7 +348,7 @@ iframe {
 }
 
 .login100-form-btn:hover {
-    background-color: #1b3815;
+    background-color: #0011ff;
 }
 
 
